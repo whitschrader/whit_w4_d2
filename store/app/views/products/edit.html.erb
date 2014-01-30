@@ -1,0 +1,14 @@
+<h1>Products#edit</h1>
+<p>Find me in app/views/products/edit.html.erb</p>
+
+<h1>Edit Products</h1>
+
+<%= link_to "DELETE", product_path, :method => :delete %>
+
+<%= form_for @product do |f| %>
+  	<%= f.label :name %>
+  	<%= f.text_field :name, :autofocus => true %>
+
+	<%= f.select :categories, @all_category_names,{controller: :products}, {:multiple => true} %>
+	<%= f.submit "add category", class: "btn btn-default"  %>
+<% end %>
